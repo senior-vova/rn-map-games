@@ -3,6 +3,7 @@ import "./App.css";
 import { Redirect, Route, Switch } from "react-router";
 import { RegionsPage } from "./pages/regions/regions";
 import { RegionsGamePage } from "./pages/regions/regions-play";
+import { MainAppHOC } from "./mainAppHoc";
 
 function App() {
   return (
@@ -16,4 +17,4 @@ function App() {
   );
 }
 
-export default App;
+export default MainAppHOC(App);
