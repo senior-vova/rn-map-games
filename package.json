@@ -2,6 +2,7 @@
   "name": "games-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://senior-vova.github.io/rn-map-games",
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.18",
     "cra-template": "1.1.2",
