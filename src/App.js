@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import 'antd-mobile/dist/antd-mobile.css';
 import { Redirect, Route, Switch } from "react-router";
 import { RegionsPage } from "./pages/regions/regions";
 import { RegionsGamePage } from "./pages/regions/regions-play";

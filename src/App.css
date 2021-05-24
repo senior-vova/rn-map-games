@@ -3,37 +3,31 @@
   height: 100vh;
   max-height: 100vh;
   border: none;
+  position: relative;
+  background-color: #fff;
 }
 
 #map,
 #mapgame {
-  height: fit-content;
-  height: 90vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
   border: none;
 }
 
 .app .head {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.head h4 {
-  font-size: 18px;
-}
-.head a,
-.head button {
-  font-size: 18px;
-  padding: 3px 10px;
-  border-radius: 25px;
-  border: 1px solid gray;
-  background-color: whitesmoke;
-  margin-right: 2px;
-  text-decoration: none;
-  color: black;
-}
-.head p {
-  display: inline;
 }
 
 .load {

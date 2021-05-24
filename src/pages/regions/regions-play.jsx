@@ -1,9 +1,9 @@
-// import React, { useState, useEffect } from "react";
 import React from "react";
 import * as AmChartsCore from "@amcharts/amcharts4/core";
 import * as AmChartsMaps from "@amcharts/amcharts4/maps";
 import { ArmeniaGeodata } from "../../map-geodata";
 import { Redirect } from "react-router-dom";
+import { Modal } from "antd-mobile";
 
 export class RegionsGamePage extends React.Component {
   constructor(props) {
@@ -17,26 +17,25 @@ export class RegionsGamePage extends React.Component {
       findRegion: "",
       redirect: false,
       timer: null,
+      showNewRecordModal: false,
+      showFinishModal: false,
     };
   }
 
   componentDidMount() {
     this.getRandomRegion().then((region) => {
       this.setState({
-        ...this.state,
         inGame: true,
         findRegion: region,
       });
       this.createMap();
       this.setState({
-        ...this.state,
         isLoading: false,
         time: 1,
       });
       this.setState({
-        ...this.state,
         timer: setInterval(() => {
-          this.setState({ ...this.state, time: this.state.time + 1 });
+          this.setState({ time: this.state.time + 1 });
         }, 1000),
       });
     });
@@ -54,9 +53,9 @@ export class RegionsGamePage extends React.Component {
     const polygonSeries = chart.series.push(
       new AmChartsMaps.MapPolygonSeries()
     );
-    chart.chartContainer.resizable = false;
-    chart.panBehavior = "none";
-    chart.maxZoomLevel = 1;
+    // chart.chartContainer.resizable = false;
+    // chart.panBehavior = "none";
+    chart.maxZoomLevel = 2;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
@@ -84,27 +83,24 @@ export class RegionsGamePage extends React.Component {
 
   regionHitEvent(region) {
     const hitRegion = region.dataItem.dataContext.name;
-    const time = this.state.time;
+    const { time } = this.state;
     if (hitRegion === this.state.findRegion) {
       region.fill = AmChartsCore.color("#367B25");
       this.setState({
-        ...this.state,
         findedRegions: [...this.state.findedRegions, this.state.findRegion],
       });
       if (this.state.findedRegions.length === this.state.regions.length) {
-        this.setState({ ...this.state, redirect: true });
+        clearInterval(this.state.timer);
         const { record } = this.state;
         if (!record || time < record) {
           localStorage.setItem("region-record", time);
-          alert(
-            "Congrats. You're time is " + time + "seconds. New record: " + time
-          );
+          this.setState({ showNewRecordModal: true });
         } else {
-          alert("Congrats. You're time is " + time + "seconds");
+          this.setState({ showFinishModal: true });
         }
       } else {
         this.getRandomRegion().then((reg) =>
-          this.setState({ ...this.state, findRegion: reg })
+          this.setState({ findRegion: reg })
         );
       }
     } else {
@@ -138,138 +134,51 @@ export class RegionsGamePage extends React.Component {
     return (
       <>
         {this.state.redirect && <Redirect to={"/regions"} />}
-        <div className="head">
-          <p>{this.state.time} վայրկյան</p>
-          <p>
-            Գտեք {this.state.findRegion}
-            {this.state.findRegion[this.state.findRegion.length - 1] !== "ի"
-              ? "ը"
-              : "ն"}
+        <div className="head" style={{ padding: 10 }}>
+          <p style={{ fontSize: 16, fontWeight: "bold" }}>
+            {this.state.time} վայրկյան
+          </p>
+          <p style={{ fontSize: 16 }}>
+            Գտեք{" "}
+            <p style={{ fontWeight: "bold", display: "inline" }}>
+              {this.state.findRegion}
+              {this.state.findRegion[this.state.findRegion.length - 1] !== "ի"
+                ? "ը"
+                : "ն"}
+            </p>
           </p>
         </div>
+        <Modal
+          visible={this.state.showNewRecordModal}
+          transparent
+          maskClosable={false}
+          onClose={() => this.setState({ showNewRecordModal: false })}
+          title={`Շնորհավորում ենք ձեզ․ Ձեր նոր ռեկորդը՝ ${this.state.time}վրկ`}
+          footer={[
+            {
+              text: "Ok",
+              onPress: () => this.setState({ showNewRecordModal: false }),
+            },
+          ]}
+          afterClose={() => this.setState({ redirect: true })}
+        />
+        <Modal
+          visible={this.state.showFinishModal}
+          transparent
+          maskClosable={false}
+          onClose={() => this.setState({ showFinishModal: false })}
+          title={`Շնորհավորում ենք ձեզ․ Ձեր ժամանակը՝ ${this.state.time}վրկ`}
+          footer={[
+            {
+              text: "Ok",
+              onPress: () => this.setState({ showFinishModal: false }),
+            },
+          ]}
+          afterClose={() => this.setState({ redirect: true })}
+        />
         {this.state.isLoading && <div className="load">Loading...</div>}
         <div id="mapgame"></div>
       </>
     );
   }
 }
-
-// export function RegionsGamePage() {
-//   const [isLoading, setIsLoading] = useState(true);
-//   const record = localStorage.getItem("region-record");
-//   const [time, setTime] = useState(0);
-//   const regions = ArmeniaGeodata.features.map((v) => v.properties.name);
-//   const [findedRegions, setFindedRegions] = useState([]);
-//   const [findRegion, setFindRegion] = useState("");
-//   const [redirect, setRedirect] = useState(false);
-
-//   useEffect(() => {
-//     getRandomRegion().then((region) => {
-//       setFindRegion(region);
-//       CreateMap();
-//       setIsLoading(false);
-//       setTime(1);
-//     });
-//     // eslint-disable-next-line
-//   }, []);
-
-//   useEffect(() => {
-//     setTimeout(() => setTime(time + 1), 1000);
-//   }, [time]);
-
-//   function CreateMap() {
-//     const chart = AmChartsCore.create("mapgame", AmChartsMaps.MapChart);
-//     chart.geodata = ArmeniaGeodata;
-//     chart.projection = new AmChartsMaps.projections.Miller();
-//     const polygonSeries = chart.series.push(
-//       new AmChartsMaps.MapPolygonSeries()
-//     );
-//     chart.chartContainer.resizable = false;
-//     chart.panBehavior = "none";
-//     chart.maxZoomLevel = 1;
-//     chart.seriesContainer.events.disableType("doublehit");
-//     chart.seriesContainer.background.events.disableType("hit");
-//     chart.chartContainer.background.events.disableType("doublehit");
-//     polygonSeries.useGeodata = true;
-//     const polygonTemplate = polygonSeries.mapPolygons.template;
-//     polygonTemplate.background.events.disableType("hit");
-//     polygonTemplate.fill = AmChartsCore.color("#ccc");
-//     polygonTemplate.events.on("hit", (event) => {
-//       regionHitEvent(event.target);
-//     });
-//   }
-
-//   function getRandomRegion() {
-//     return new Promise((res, rej) => {
-//       const randomRegion = regions[Math.floor(Math.random() * regions.length)];
-//       if (findedRegions.includes(randomRegion)) {
-//         res(getRandomRegion());
-//       }
-//       res(randomRegion);
-//     });
-//   }
-
-//   function regionHitEvent(region) {
-//     const hitRegion = region.dataItem.dataContext.name;
-//     alert(`Find: ${findRegion}, Time: ${time}`);
-//     if (hitRegion === findRegion) {
-//       region.fill = AmChartsCore.color("#367B25");
-//       setFindedRegions([...findedRegions, findRegion]);
-//       if (findedRegions.length === regions.length) {
-//         if (!record || record < time) {
-//           localStorage.setItem("region-record", time);
-//           alert(
-//             "Congrats. You're time is " + time + "seconds. New record: " + time
-//           );
-//         } else {
-//           alert("Congrats. You're time is " + time + "seconds");
-//         }
-//         setRedirect(true);
-//       } else {
-//         getRandomRegion().then((reg) => setFindRegion(reg));
-//       }
-//     } else {
-//       if (findedRegions.includes(hitRegion)) {
-//         region.fill = AmChartsCore.color("red");
-//         setTimeout(() => {
-//           region.fill = AmChartsCore.color("#367B25");
-//           setTimeout(() => {
-//             region.fill = AmChartsCore.color("red");
-//             setTimeout(() => {
-//               region.fill = AmChartsCore.color("#367B25");
-//             }, 300);
-//           }, 300);
-//         }, 400);
-//       } else {
-//         region.fill = AmChartsCore.color("red");
-//         setTimeout(() => {
-//           region.fill = AmChartsCore.color("#ccc");
-//           setTimeout(() => {
-//             region.fill = AmChartsCore.color("red");
-//             setTimeout(() => {
-//               region.fill = AmChartsCore.color("#ccc");
-//             }, 300);
-//           }, 300);
-//         }, 400);
-//       }
-//     }
-//   }
-
-//   return (
-//     <>
-//       {redirect && <Redirect to="/regions" />}
-//       <div className="head">
-//         <p>{time} վայրկյան</p>
-//         <p>
-//           Գտեք{" "}
-//           <b>
-//             {findRegion}
-//             {findRegion[findRegion.length - 1] !== "ի" ? "ը" : "ն"}
-//           </b>
-//         </p>
-//       </div>
-//       {isLoading && <div className="load">Loading...</div>}
-//       <div id="mapgame"></div>
-//     </>
-//   );
-// }

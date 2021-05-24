@@ -16,14 +16,13 @@ export const RegionsPage = () => {
     const polygonSeries = chart.series.push(
       new AmChartsMaps.MapPolygonSeries()
     );
-    chart.chartContainer.resizable = false;
-    chart.panBehavior = "none";
-    chart.maxZoomLevel = 1;
+    // chart.chartContainer.resizable = false;
+    // chart.panBehavior = "none";
+    chart.maxZoomLevel = 2;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
     polygonSeries.useGeodata = true;
-    polygonSeries.mapPolygons.template.events.on("hit", function (ev) {});
     const polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.background.events.disableType("hit");
     polygonTemplate.tooltipText = "{name}";
@@ -36,8 +35,18 @@ export const RegionsPage = () => {
   return (
     <>
       <div className="head">
-        <h4>Ռեկորդ: {record ? `${record}sec` : "չկա"}</h4>
-        <NavLink to="/regions/play">Խաղալ</NavLink>
+        <p style={{ fontSize: 16, fontWeight: "bold" }}>
+          Ռեկորդ: {record ? `${record}վրկ` : "չկա"}
+        </p>
+        <NavLink
+          className={
+            "am-button am-button-ghost am-button-small am-button-inline"
+          }
+          style={{ fontSize: 16, fontWeight: "bold" }}
+          to="/regions/play"
+        >
+          Խաղալ
+        </NavLink>
       </div>
       {isLoading && <div className="load">Loading...</div>}
       <div id="map"></div>

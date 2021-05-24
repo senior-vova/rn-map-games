@@ -1,10 +1,11 @@
 {
-  "name": "games-app",
+  "name": "rn-hay-game-webview",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://senior-vova.github.io/rn-map-games/",
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.18",
+    "antd-mobile": "^2.3.4",
     "cra-template": "1.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -17,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "push": "git add . && git commit -m\"webview\" && git push"
   },
   "eslintConfig": {
     "extends": [
