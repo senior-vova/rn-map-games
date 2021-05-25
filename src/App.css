@@ -36,3 +36,11 @@
   align-items: center;
   height: 90vh;
 }
+
+.am-modal-title {
+  line-height: 22px !important;
+}
+
+.am-modal-body {
+  padding: 0 !important;
+}

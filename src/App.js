@@ -6,6 +6,7 @@ import { RegionsPage } from "./pages/regions/regions";
 import { RegionsGamePage } from "./pages/regions/regions-play";
 import { MainAppHOC } from "./mainAppHoc";
 import { CitiesPage } from "./pages/cities/cities";
+import { CitiesGamePage } from "./pages/cities/cities-play";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route exact path="/regions" render={() => <RegionsPage />} />
         <Route exact path="/cities" render={() => <CitiesPage />} />
         <Route exact path="/regions/play" render={() => <RegionsGamePage />} />
+        <Route exact path="/cities/play" render={() => <CitiesGamePage />} />
         <Route path="/" render={() => <Redirect to="/regions" />} />
       </Switch>
     </div>
