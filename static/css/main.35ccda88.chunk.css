@@ -1,2 +1,0 @@
-*{margin:0;padding:0;box-sizing:border-box}:focus{outline:none}.app{padding:6px;height:100vh;max-height:100vh;border:none;position:relative;background-color:#fff}#map,#mapgame{bottom:0;z-index:0;border:none}#map,#mapgame,.app .head{position:absolute;top:0;right:0;left:0}.app .head{z-index:100;padding:5px;justify-content:space-between}.app .head,.load{display:flex;align-items:center}.load{justify-content:center;height:90vh}
-/*# sourceMappingURL=main.35ccda88.chunk.css.map */
