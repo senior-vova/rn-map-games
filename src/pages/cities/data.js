@@ -109,4 +109,34 @@ export const CitiesData = [
     longitude: 44.9565695,
     title: "Սևան",
   },
+  {
+    latitude: 40.3832447,
+    longitude: 43.8629578,
+    title: "Թալին",
+  },
+  {
+    latitude: 39.8479501,
+    longitude: 44.6838104,
+    title: "Արարատ",
+  },
+  {
+    latitude: 41.0907038,
+    longitude: 44.61992,
+    title: "Ալավերդի",
+  },
+  {
+    latitude: 40.6230699,
+    longitude: 43.9500545,
+    title: "Արթիկ",
+  },
+  {
+    latitude: 38.9028606,
+    longitude: 46.2439226,
+    title: "Մեղրի",
+  },
+  {
+    latitude: 40.4050129,
+    longitude: 44.6330522,
+    title: "Չարենցավան",
+  },
 ];
