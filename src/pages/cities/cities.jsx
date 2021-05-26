@@ -33,7 +33,7 @@ export const CitiesPage = () => {
     circle.fill = AmChartsCore.color("#B27799");
     circle.stroke = AmChartsCore.color("#FFFFFF");
     circle.strokeWidth = 2;
-    circle.nonScaling = false;
+    circle.nonScaling = true;
     circle.tooltipHTML = "<h3>{title}</h3>";
     imageSeriesTemplate.propertyFields.latitude = "latitude";
     imageSeriesTemplate.propertyFields.longitude = "longitude";

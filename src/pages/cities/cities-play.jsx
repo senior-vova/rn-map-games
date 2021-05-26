@@ -70,7 +70,7 @@ export class CitiesGamePage extends React.Component {
     circle.fill = AmChartsCore.color("#B27799");
     circle.stroke = AmChartsCore.color("#FFFFFF");
     circle.strokeWidth = 2;
-    circle.nonScaling = false;
+    circle.nonScaling = true;
     imageSeriesTemplate.propertyFields.latitude = "latitude";
     imageSeriesTemplate.propertyFields.longitude = "longitude";
     imageSeries.data = CitiesData;
