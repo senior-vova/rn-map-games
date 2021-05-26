@@ -54,4 +54,59 @@ export const CitiesData = [
     longitude: 46.3316841,
     title: "Կապան",
   },
+  {
+    latitude: 39.5102783,
+    longitude: 46.3208055,
+    title: "Գորիս",
+  },
+  {
+    latitude: 39.5325711,
+    longitude: 46.0187887,
+    title: "Սիսիան",
+  },
+  {
+    latitude: 39.8251429,
+    longitude: 45.659716,
+    title: "Ջերմուկ",
+  },
+  {
+    latitude: 40.185099,
+    longitude: 45.7171153,
+    title: "Վարդենիս",
+  },
+  {
+    latitude: 40.7294371,
+    longitude: 44.8388739,
+    title: "Դիլիջան",
+  },
+  {
+    latitude: 40.5926742,
+    longitude: 44.3509913,
+    title: "Ապարան",
+  },
+  {
+    latitude: 40.1428105,
+    longitude: 44.277391,
+    title: "Էջմիածին",
+  },
+  {
+    latitude: 41.0106313,
+    longitude: 44.3481051,
+    title: "Ստեփանավան",
+  },
+  {
+    latitude: 40.6373214,
+    longitude: 45.5138897,
+    title: "Արծվաշեն",
+  },
+  {
+    latitude: 40.1321282,
+    longitude: 45.284829,
+    title: "Մարտունի",
+  },
+  {
+    latitude: 40.5517612,
+    longitude: 44.9565695,
+    title: "Սևան",
+  },
 ];

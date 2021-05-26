@@ -55,7 +55,7 @@ export class RegionsGamePage extends React.Component {
     );
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
-    chart.maxZoomLevel = 2;
+    chart.maxZoomLevel = 1.5;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");

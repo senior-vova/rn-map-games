@@ -56,7 +56,7 @@ export class CitiesGamePage extends React.Component {
     );
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
-    chart.maxZoomLevel = 2;
+    chart.maxZoomLevel = 1.5;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
@@ -70,7 +70,7 @@ export class CitiesGamePage extends React.Component {
     circle.fill = AmChartsCore.color("#B27799");
     circle.stroke = AmChartsCore.color("#FFFFFF");
     circle.strokeWidth = 2;
-    circle.nonScaling = true;
+    circle.nonScaling = false;
     imageSeriesTemplate.propertyFields.latitude = "latitude";
     imageSeriesTemplate.propertyFields.longitude = "longitude";
     imageSeries.data = CitiesData;

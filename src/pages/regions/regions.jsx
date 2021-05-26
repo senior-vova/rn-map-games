@@ -18,14 +18,14 @@ export const RegionsPage = () => {
     );
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
-    chart.maxZoomLevel = 2;
+    chart.maxZoomLevel = 1.5;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
     polygonSeries.useGeodata = true;
     const polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.background.events.disableType("hit");
-    polygonTemplate.tooltipText = "{name}";
+    polygonTemplate.tooltipHTML = "<h3>{name}</h3>";
     polygonTemplate.fill = AmChartsCore.color("#ccc");
     const hs = polygonTemplate.states.create("hover");
     hs.properties.fill = AmChartsCore.color("#367B25");

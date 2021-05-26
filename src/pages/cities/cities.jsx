@@ -19,17 +19,13 @@ export const CitiesPage = () => {
     );
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
-    chart.maxZoomLevel = 2;
+    chart.maxZoomLevel = 1.5;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
     polygonSeries.useGeodata = true;
     const polygonTemplate = polygonSeries.mapPolygons.template;
     polygonTemplate.background.events.disableType("hit");
-    // polygonTemplate.tooltipText = "{name}";
-    // polygonTemplate.fill = AmChartsCore.color("#ccc");
-    // const hs = polygonTemplate.states.create("hover");
-    // hs.properties.fill = AmChartsCore.color("#367B25");
     const imageSeries = chart.series.push(new AmChartsMaps.MapImageSeries());
     const imageSeriesTemplate = imageSeries.mapImages.template;
     const circle = imageSeriesTemplate.createChild(AmChartsCore.Circle);
@@ -37,7 +33,7 @@ export const CitiesPage = () => {
     circle.fill = AmChartsCore.color("#B27799");
     circle.stroke = AmChartsCore.color("#FFFFFF");
     circle.strokeWidth = 2;
-    circle.nonScaling = true;
+    circle.nonScaling = false;
     circle.tooltipHTML = "<h3>{title}</h3>";
     imageSeriesTemplate.propertyFields.latitude = "latitude";
     imageSeriesTemplate.propertyFields.longitude = "longitude";
