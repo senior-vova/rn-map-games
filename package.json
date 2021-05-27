@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npm run push && gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "push": "git add . && git commit -m\"webview\" && git push"
   },
   "eslintConfig": {
