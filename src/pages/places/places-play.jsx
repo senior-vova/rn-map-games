@@ -11,7 +11,7 @@ export class PlacesGamePage extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
-      record: localStorage.getItem("cities-record"),
+      record: localStorage.getItem("places-record"),
       time: 0,
       cities: PlacesData.map((v) => v.title),
       findedCities: [],
@@ -103,7 +103,7 @@ export class PlacesGamePage extends React.Component {
         clearInterval(this.state.timer);
         const { record } = this.state;
         if (!record || time < record) {
-          localStorage.setItem("cities-record", time);
+          localStorage.setItem("places-record", time);
           this.setState({ showNewRecordModal: true });
         } else {
           this.setState({ showFinishModal: true });

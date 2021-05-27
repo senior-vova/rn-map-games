@@ -7,7 +7,7 @@ import { PlacesData } from "./data";
 
 export const PlacesPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const record = localStorage.getItem("cities-record");
+  const record = localStorage.getItem("places-record");
 
   useEffect(() => {
     AmChartsCore.options.autoDispose = true;
