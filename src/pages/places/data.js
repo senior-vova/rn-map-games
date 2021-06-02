@@ -1,12 +1,12 @@
 export const PlacesData = [
   {
-    latitude: 40.1404412,
-    longitude: 44.8163412,
+    latitude: 40.2,
+    longitude: 44.9,
     title: "Գեղարդի վանք",
   },
   {
     latitude: 39.8783612,
-    longitude: 44.5740412,
+    longitude: 44.61,
     title: "Խոր Վիրապ",
   },
   {
@@ -35,13 +35,13 @@ export const PlacesData = [
     title: "Սուրբ Գայանե եկեղեցի",
   },
   {
-    latitude: 40.3383493,
-    longitude: 43.8549377,
-    title: "Դաշտադեմ",
+    latitude: 40.3303622,
+    longitude: 44.2711835,
+    title: "Բյուրականի աստղադիտարան",
   },
   {
     latitude: 40.7297134,
-    longitude: 44.9951677,
+    longitude: 45.05,
     title: "Գոշավանք",
   },
   {
@@ -55,9 +55,9 @@ export const PlacesData = [
     title: "Հառիճի վանք",
   },
   {
-    latitude: 40.787059,
-    longitude: 43.8581746,
-    title: "Սուրբ Աստվածածին",
+    latitude: 40.5,
+    longitude: 44.3782511,
+    title: "Հայոց այբուբենի հուշարձան",
   },
   {
     latitude: 40.5638059,
@@ -65,23 +65,23 @@ export const PlacesData = [
     title: "Սևանավանք",
   },
   {
-    latitude: 40.1221242,
-    longitude: 45.6079387,
-    title: "Մաքենիս",
-  },
-  {
-    latitude: 40.1464238,
-    longitude: 45.5133224,
+    latitude: 40.1909998,
+    longitude: 45.5743879,
     title: "Վանևան",
   },
   {
-    latitude: 39.9495725,
-    longitude: 45.2336955,
-    title: "Օրբելյանների քարավանատուն",
+    latitude: 39.5522471,
+    longitude: 45.9916534,
+    title: "Շաքիի ջրվեժ",
+  },
+  {
+    latitude: 41.0624567,
+    longitude: 43.62,
+    title: "Արփի լիճ",
   },
   {
     latitude: 39.6848862,
-    longitude: 45.2309299,
+    longitude: 45.3,
     title: "Նորավանք",
   },
   {
@@ -90,8 +90,8 @@ export const PlacesData = [
     title: "Տաթեւի վանք",
   },
   {
-    latitude: 39.4813207,
-    longitude: 46.3457179,
+    latitude: 39.5,
+    longitude: 46.37,
     title: "Քարահունջ",
   },
   {
@@ -99,16 +99,16 @@ export const PlacesData = [
     longitude: 44.4883047,
     title: "Ծիծեռնակաբերդ",
   },
-  // {
-  //   latitude: 0,
-  //   longitude: 0,
-  //   title: "",
-  // },
-  // {
-  //   latitude: 0,
-  //   longitude: 0,
-  //   title: "",
-  // },
+  {
+    latitude: 40.8,
+    longitude: 44.9,
+    title: "Հաղարծին",
+  },
+  {
+    latitude: 40.85,
+    longitude: 44.45,
+    title: "Ստեփանավան դենդրոպարկ",
+  },
   // {
   //   latitude: 0,
   //   longitude: 0,
