@@ -44,18 +44,27 @@ export const PlacesPage = () => {
   return (
     <>
       <div className="head">
-        <p style={{ fontSize: 16, fontWeight: "bold" }}>
-          Ռեկորդ: {record ? `${record}վրկ` : "չկա"}
+        <p style={{ fontSize: 18 }}>
+          Այս խաղի ընթացքում ձեզ տրվելու է մի պատահական մարզի անուն և դուք պետք
+          է նշեք այն քարտեզի վրա
         </p>
         <NavLink
           className={
-            "am-button am-button-ghost am-button-small am-button-inline"
+            "am-button am-button-primary am-button-small am-button-inline"
           }
-          style={{ fontSize: 16, fontWeight: "bold" }}
+          style={{
+            fontSize: 16,
+            fontWeight: "bold",
+            marginTop: 5,
+            marginBottom: 5,
+          }}
           to="/places/play"
         >
           Խաղալ
         </NavLink>
+        <p style={{ fontSize: 16, fontWeight: "bold" }}>
+          Ռեկորդ: {record ? `${record}վրկ` : "չկա"}
+        </p>
       </div>
       {isLoading && <div className="load">Loading...</div>}
       <div id="map"></div>

@@ -138,7 +138,7 @@ export class RegionsGamePage extends React.Component {
           <p style={{ fontSize: 16, fontWeight: "bold" }}>
             {this.state.time} վայրկյան
           </p>
-          <p style={{ fontSize: 16 }}>
+          <p className="gteq">
             Գտեք{" "}
             <p style={{ fontWeight: "bold", display: "inline" }}>
               {this.state.findRegion}
