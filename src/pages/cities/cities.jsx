@@ -19,7 +19,7 @@ export const CitiesPage = () => {
     );
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
-    chart.maxZoomLevel = 1.5;
+    chart.maxZoomLevel = 2;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
@@ -44,20 +44,16 @@ export const CitiesPage = () => {
   return (
     <>
       <div className="head">
-        <p style={{ fontSize: 18 }}>
+        <p className="desc">
           Այս խաղի ընթացքում ձեզ տրվելու է մի պատահական քաղաքի անուն և դուք պետք
           է նշեք այն քարտեզի վրա
         </p>
+      </div>
+      <div className="footer">
         <NavLink
           className={
-            "am-button am-button-primary am-button-small am-button-inline"
+            "am-button am-button-primary am-button-large am-button-inline xaxal"
           }
-          style={{
-            fontSize: 16,
-            fontWeight: "bold",
-            marginTop: 5,
-            marginBottom: 5,
-          }}
           to="/cities/play"
         >
           Խաղալ
