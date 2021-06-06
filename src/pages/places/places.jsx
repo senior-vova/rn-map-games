@@ -20,7 +20,7 @@ export const PlacesPage = () => {
     // chart.chartContainer.resizable = false;
     // chart.panBehavior = "none";
     chart.maxZoomLevel = 2;
-chart.minZoomLevel = 0.9;
+    chart.minZoomLevel = 0.9;
     chart.seriesContainer.events.disableType("doublehit");
     chart.seriesContainer.background.events.disableType("hit");
     chart.chartContainer.background.events.disableType("doublehit");
@@ -46,8 +46,8 @@ chart.minZoomLevel = 0.9;
     <>
       <div className="head">
         <p className="desc">
-          Այս խաղի ընթացքում ձեզ տրվելու է մի պատահական մարզի անուն և դուք պետք
-          է նշեք այն քարտեզի վրա
+          Այս խաղի ընթացքում ձեզ տրվելու է մի պատահական տեսարժան վայրի անուն և
+          դուք պետք է նշեք այն քարտեզի վրա
         </p>
       </div>
       <div className="footer">
