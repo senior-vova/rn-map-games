@@ -535,7 +535,7 @@ export const ArmeniaGeodata = {
         ],
       },
       properties: {
-        name: "Գեղարքունիկ",
+        name: "Գեղարքունիք",
         id: "AM-GR",
         TYPE: "Province",
         CNTRY: "Armenia",
