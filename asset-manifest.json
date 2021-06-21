@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/rn-map-games/static/css/main.08a69352.chunk.css",
-    "main.js": "/rn-map-games/static/js/main.f4ce961c.chunk.js",
-    "main.js.map": "/rn-map-games/static/js/main.f4ce961c.chunk.js.map",
+    "main.js": "/rn-map-games/static/js/main.38f1de0f.chunk.js",
+    "main.js.map": "/rn-map-games/static/js/main.38f1de0f.chunk.js.map",
     "runtime-main.js": "/rn-map-games/static/js/runtime-main.5fd7e21a.js",
     "runtime-main.js.map": "/rn-map-games/static/js/runtime-main.5fd7e21a.js.map",
     "xlsx.js": "/rn-map-games/static/js/xlsx.88c531cb.chunk.js",
@@ -28,6 +28,6 @@
     "static/css/3.5df3d3f9.chunk.css",
     "static/js/3.3d54be80.chunk.js",
     "static/css/main.08a69352.chunk.css",
-    "static/js/main.f4ce961c.chunk.js"
+    "static/js/main.38f1de0f.chunk.js"
   ]
 }
